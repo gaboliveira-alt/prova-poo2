@@ -1,34 +1,25 @@
-import { UserContract } from "./utils";
-import { Admin } from "./admin";
-import { RegularUser } from "./regularuser";
 import { User } from "./user";
+import { UserContract } from "./utils";
+
 
 class MessageHistory <T extends UserContract> {
-    constructor(protected userArrays: T[], protected user: T) {
-        this.userArrays = [],
-        this.user = user
+    private arrayUsers: T[] = [];
 
+
+    addUsers(user: T): void {
+        this.arrayUsers.push(user);
     }
 
 
-    addUsers(): void {
-        this.userArrays.push(this.user)
-    }
-
-
-    registerMessage(userToSend: Admin, userToReceived: RegularUser): void {
+    registerMessage(): void {
+        const logMessages: string[] = [];
         
+
         const message: UserContract = {
-            sendMessage(to, message) {
-                to = userToReceived.name
-                message = userToSend.message()
+            sendMessage(): string {
 
-                return `${to} você recebeu uma mensagem:\n${message}`
-            },
+            }
         }
-
-        const logMessages: UserContract[] = []
-        logMessages.push(message) 
     }
 
 
