@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "dev": "ts-node src/tests.ts",
+    "dev": "ts-node src/main.ts",
     "build": "del /s /q build && tsc"
   },
   "author": "",

@@ -1,12 +1,21 @@
-import { User } from "./user"
+import { User } from "./user";
 
 export class RegularUser extends User {
-    constructor(name: string, email: string) {
-        super(name, email);
+    
+    private static email: string = 'user3456@hotmail.com'
+
+
+    constructor(name: string) {
+        super(name, RegularUser.email)
+    }
+
+
+    sendMessage(to: string, message: string): string {
+        return `Usuario - ${this.name} tem uma mensagem para ${to}: ` + `${message}`
     }
 
 
     message(): string {
-        return 'Usuario enviou uma mensagem';
+        return 'Luke Skywalker está aqui! Droga, avisem ao Lorde Vader ou ao Imperador!'
     }
 }
