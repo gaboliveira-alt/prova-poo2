@@ -10,7 +10,9 @@ export class MessageHistory<T extends UserContract> {
     addUsers(user: T): void {
         if (this.arrayUsers.length >= 4) throw new Error('O limite de 4 usuarios foi atingido!')
         if (this.arrayUsers.includes(user)) throw new Error('Este Usuario já foi adicionado')
-        if (this.arrayUsers.some(u => (u as unknown as User).isTheSame(user as unknown as User)))
+        if (this.arrayUsers.some(u => (u as unknown as User).isTheSame(user as unknown as User))) {
+            throw new Error('O usuario com este nome já foi adicionado!');
+        }
         this.arrayUsers.push(user);
     }
 
